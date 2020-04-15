@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * 画像のリサイズ処理の動作を見るために作成したクラス
+ * ① 標準入力から画像の絶対パスを受け取る
+ * ② リサイズ方法を選択する
+ * ③ プロジェクト内にリサイズした画像を出力する
+ */
 public class ImageTest {
     public static void main (String[] args) throws IOException {
 
