@@ -1,4 +1,4 @@
-package decorator.StarBuzzCoffee;
+package decorator;
 
 public abstract class Beverage {
     public enum Size { TALL, GRANDE, VENTI };

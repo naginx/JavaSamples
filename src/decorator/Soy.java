@@ -1,4 +1,4 @@
-package decorator.StarBuzzCoffee;
+package decorator;
 
 public class Soy extends CondimentDecorator {
     public Soy(Beverage beverage) {

@@ -1,3 +1,5 @@
+package Algolithm;
+
 /**
  * 線形探索を行うクラス
  * 平均計算量 O(n)
