@@ -4,10 +4,9 @@ public class RemoteLoader {
 
     public static void main(String[] args) {
         RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
-        Light livingRoomLight = new Light("リビングルーム");
-        LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
-        LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
-        remoteControl.setOnCommands(0, livingRoomLightOn, livingRoomLightOff);
+        CeilingFan ceilingFan = new CeilingFan("リビングルーム");
+
+        CeilingFanHighCommand ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
 
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
@@ -17,6 +16,5 @@ public class RemoteLoader {
         remoteControl.onButtonWasPushed(0);
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
-
     }
 }
