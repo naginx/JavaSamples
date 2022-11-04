@@ -14,15 +14,35 @@ public class DuckSimulator {
         Quackable duckCall = duckFactory.createDuckCall();
         Quackable rubberDuck = duckFactory.createRubberDuck();
         Quackable gooseAdapter = new GooseAdapter(new Goose());
+        System.out.println("\nカモシミュレータ：コンポジット（群れ）付き");
 
-        System.out.println("\nカモシミュレータ");
-        simulate(mallardDuck);
-        simulate(redheadDuck);
-        simulate(duckCall);
-        simulate(rubberDuck);
-        simulate(gooseAdapter);
+        Flock flockOfDucks = new Flock();
 
-        System.out.println("カモが鳴いた回数：" + QuackCounter.getQuacks() + "回");
+        flockOfDucks.add(redheadDuck);
+        flockOfDucks.add(duckCall);
+        flockOfDucks.add(rubberDuck);
+        flockOfDucks.add(gooseAdapter);
+
+        Flock flockOfMallards = new Flock();
+        Quackable mallardOne = duckFactory.createMallardDuck();
+        Quackable mallardTwo = duckFactory.createMallardDuck();
+        Quackable mallardThree = duckFactory.createMallardDuck();
+        Quackable mallardFour = duckFactory.createMallardDuck();
+
+        flockOfMallards.add(mallardOne);
+        flockOfMallards.add(mallardTwo);
+        flockOfMallards.add(mallardThree);
+        flockOfMallards.add(mallardFour);
+
+        flockOfDucks.add(flockOfMallards);
+
+        System.out.println("\nカモシミュレータ：群れ全体のシミュレーション");
+        simulate(flockOfDucks);
+
+        System.out.println("\nカモシミュレータ：マガモの群れのシミュレーション");
+        simulate(flockOfMallards);
+
+        System.out.println("\nカモが鳴いた回数：" + QuackCounter.getQuacks() + "回");
     }
 
     void simulate(Quackable duck) {
