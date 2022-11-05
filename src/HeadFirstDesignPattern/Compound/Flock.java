@@ -1,19 +1,30 @@
 package HeadFirstDesignPattern.Compound;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Flock implements Quackable {
-    ArrayList<Quackable> quackers = new ArrayList<>();
+    ArrayList<Quackable> ducks = new ArrayList<>();
 
     public void add(Quackable quacker) {
-        quackers.add(quacker);
+        ducks.add(quacker);
     }
 
     @Override
     public void quack() {
-        for (Quackable quacker : quackers) {
-            quacker.quack();
+        for (Quackable duck : ducks) {
+            duck.quack();
         }
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        for (Quackable duck : ducks) {
+            duck.registerObserver(observer);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {
+        // 実装不要
     }
 }

@@ -18,6 +18,7 @@ public class DuckSimulator {
 
         Flock flockOfDucks = new Flock();
 
+        flockOfDucks.add(mallardDuck);
         flockOfDucks.add(redheadDuck);
         flockOfDucks.add(duckCall);
         flockOfDucks.add(rubberDuck);
@@ -36,11 +37,11 @@ public class DuckSimulator {
 
         flockOfDucks.add(flockOfMallards);
 
-        System.out.println("\nカモシミュレータ：群れ全体のシミュレーション");
-        simulate(flockOfDucks);
+        System.out.println("\nカモシミュレータ：オブザーバー付き");
+        Quacklogist quacklogist = new Quacklogist();
+        flockOfDucks.registerObserver(quacklogist);
 
-        System.out.println("\nカモシミュレータ：マガモの群れのシミュレーション");
-        simulate(flockOfMallards);
+        simulate(flockOfDucks);
 
         System.out.println("\nカモが鳴いた回数：" + QuackCounter.getQuacks() + "回");
     }
