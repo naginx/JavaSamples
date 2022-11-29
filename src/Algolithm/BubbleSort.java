@@ -1,6 +1,6 @@
 package Algolithm;
 
-class BubbleSort {
+final class BubbleSort {
 
     public static void main(String[] args) {
         BubbleSort bs = new BubbleSort();
